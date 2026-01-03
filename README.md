@@ -14,3 +14,7 @@ A console utility that shows processes, CPU/RAM usage, and process trees in real
 - Process search
 - A color theme that can be changed
 - Export of data in JSON
+
+<br>
+
+> to open the Rust Book from term use ```rustup docs --book```

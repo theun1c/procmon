@@ -1,26 +1,37 @@
-use std::{cmp::Ordering, io};
+use std::{cmp::Ordering, io };
 
-use rand::{ random_range };
+use rand::random_range;
+
 
 fn main(){
 
-    let secret_number= random_range(1..=100);
 
-    println!("enter guess:");
+    let secret_number = random_range(1..=100);
 
-    let mut guess = String::new();
+    loop{
+        println!("enter num: ");
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("error while reading");
+        let mut guess = String::new();
 
-    let guess: u32 = guess.trim().parse().expect("converting error");
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("reading error");
 
-    match guess.cmp(&secret_number) {
-        Ordering::Less => println!("to small"),
-        Ordering::Equal => println!("u win"),
-        Ordering::Greater => println!("to big"),
+        let guess: i32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+
+        println!("ure guess: {}", guess);
+
+        match guess.cmp(&secret_number) {
+            Ordering::Equal => {
+                println!("u win");
+                break;
+            },
+            Ordering::Greater => println!("big"),
+            Ordering::Less => println!("small"),
+        }
     }
-    
 }   
 

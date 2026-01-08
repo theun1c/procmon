@@ -18,3 +18,7 @@ A console utility that shows processes, CPU/RAM usage, and process trees in real
 <br>
 
 > to open the Rust Book from term use ```rustup docs --book```
+
+## TODO
+
+> u can use this [PROJECT TODO LINE](todo.md)

@@ -1,4 +1,4 @@
-# about CPU statistics
+# About CPU statistics
 
 The output of the built-in top utility looks like this (+ we use the -i flag to hide zero processes)
 

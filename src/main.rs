@@ -1,10 +1,11 @@
-use std::{cmp::Ordering, io };
+use std::process::Command;
 
-use rand::random_range;
+fn main() {
+    let mut top_cmd = Command::new("sh")
+        .arg("-c")
+        .arg("top -i -d 1 | grep %Cpu")
+        .spawn()
+        .expect("ls command failed to start");
 
-
-fn main(){
-
-    
-}   
-
+    top_cmd.wait().expect("failed to wait child");
+}
